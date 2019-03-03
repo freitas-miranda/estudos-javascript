@@ -1,2 +1,2 @@
-# react-dashboard
-Single page com React
+# Estudos JavaScript
+Projetos apenas para aprendizado

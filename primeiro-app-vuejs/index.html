@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Tarefas</title>
+
+    <style>
+        .tarefaPronta {
+            text-decoration: line-through;
+        }
+    </style>        
+</head>
+
+<body>
+    <div id="tarefasApp">
+        <h1>Controle suas tarefas</h1>
+        <h2>Adicionar tarefa</h2>
+        <form v-on:submit="addTarefa">
+            <input type="text" v-model="novaTarefa.titulo" placeholder="Título da tarefa">
+            <input type="submit" value="Adicionar">
+        </form>
+        <hr>
+        <h2>Tarefas a fazer</h2>
+        <table>
+            <thead>
+                <th>Pronta?</th>
+                <th>Título</th>
+                <th>Remover</th>
+            </thead>
+            <tbody>
+                <tr v-for="tarefa in tarefas">
+                    <td><input type="checkbox" v-model="tarefa.pronta"></td>
+                    <td><span v-bind:class="{ tarefaPronta: tarefa.pronta }">{{tarefa.titulo}}</span></td>
+                    <td><button v-on:click="removerTarefa(tarefa)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>   
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    
+    <script>
+        var tarefasApp = new Vue({
+            el: "#tarefasApp",
+            data: {
+                tarefas: [
+                    { titulo: "Desenvolver API para o sistema", pronta: false },
+                    { titulo: "Criar controle de acesso", pronta: false },
+                    { titulo: "Enviar novas mudanças para o servidor", pronta: false },
+                    { titulo: "Teste", pronta: false },
+                ],
+                novaTarefa: {
+                    titulo: '',
+                    pronta: false
+                }
+            },
+            methods: {
+                addTarefa: function (e) {
+                    e.preventDefault();
+                    this.tarefas.push(this.novaTarefa);
+                    this.novaTarefa = { titulo: '', pronta: false };
+                                                        
+                },
+                removerTarefa: function (tarefa) {
+                    this.tarefas.splice(this.tarefas.indexOf(tarefa), 1)
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
