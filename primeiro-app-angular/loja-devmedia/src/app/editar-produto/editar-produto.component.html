@@ -1,0 +1,14 @@
+
+<p>
+  Edição de Produto
+</p>
+<form (submit)="salvar()">
+  <input name="id" type="text" [(ngModel)]="produto.id"><br>
+  <br>
+  <input upperCase [class.alerta]="produto.nome.length > 15" name="nome" type="text" [(ngModel)]="produto.nome">
+  <div [style.display]="produto.nome.length > 15 ? 'block':'none'">Evite nomes com mais de 15 caracteres.</div>
+  <br>
+  <input type="submit" value="Salvar">
+</form>
+<br>
+{{ debug }}

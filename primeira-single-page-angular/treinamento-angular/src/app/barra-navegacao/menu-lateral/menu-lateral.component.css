@@ -1,0 +1,34 @@
+.menu {
+    width: 0px;
+    height: 100%;
+    border-top: 1px solid #333;
+    background-color: #222;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: width .5s;
+}
+
+.menu.menu-open {
+    width: 300px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 10px 0px;
+}
+
+.menu ul li.active {
+    background-color: #080808;
+}
+
+.menu ul li a {
+    display: block;
+    color: #9d9d9d;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.menu ul li:hover a,
+.menu ul li.active a {
+    color: white
+}
