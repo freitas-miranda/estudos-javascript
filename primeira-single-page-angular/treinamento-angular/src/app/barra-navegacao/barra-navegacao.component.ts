@@ -14,7 +14,7 @@ export class BarraNavegacaoComponent implements OnInit {
   ngOnInit() {
   }
 
-  disparaEvento() {
+  disparaEvento(){
     this.onToggle.emit();
   }
 

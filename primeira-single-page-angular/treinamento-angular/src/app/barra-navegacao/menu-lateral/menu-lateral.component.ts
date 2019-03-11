@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuLateralComponent implements OnInit {
 
-  menuAberto = false;
+  menuAberto = true;
   constructor() { }
 
   ngOnInit() {
   }
 
-  toggle() {
+  toggle(){
     this.menuAberto = !this.menuAberto;
   }
 
