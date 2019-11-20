@@ -10,7 +10,7 @@
   "author": "Alan Miranda",
   "license": "ISC",
   "dependencies": {
-    "angular": ">1.6.0"
+    "angular": ">1.7.9"
   },
   "devDependencies": {
     "gulp": ">3.9.1"
